@@ -16,5 +16,13 @@
   "license": "MIT",
   "devDependencies": {
     "jasmine": "^2.5.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SysCoder/tic-tac-toe-ai-engine.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SysCoder/tic-tac-toe-ai-engine/issues"
+  },
+  "homepage": "https://github.com/SysCoder/tic-tac-toe-ai-engine#readme"
 }
