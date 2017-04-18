@@ -1,0 +1,20 @@
+{
+  "name": "tic-tac-toe-ai-engine",
+  "version": "1.0.0",
+  "description": "Agnostic Tic Tac Toe game engine. Should be able to plug into any javascript program and provide a simple Tic Tac Toe AI API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "keywords": [
+    "tic",
+    "tac",
+    "toe",
+    "engine"
+  ],
+  "author": "Marcellus Pelcher",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine": "^2.5.3"
+  }
+}
