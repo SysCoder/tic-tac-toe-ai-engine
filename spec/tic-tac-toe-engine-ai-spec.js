@@ -2,19 +2,19 @@ describe("Tic Tac Toe Engine AI", function() {
   var engine = require('../TicTacToeEngineAI');
 
  // determineTurn
- it("should return who current player turn",
+ it("should return player turn",
     function() {
      let board = ['O', '', '', '', '', '', '', '', 'X']
      expect(engine.determineTurn(board)).toEqual('X');
 
    });
- it("should return who current player turn",
+ it("should return player turn",
     function() {
      let board = ['O', 'X', '', '', '', '', '', '', 'X']
      expect(engine.determineTurn(board)).toEqual('O');
 
    });
- it("should return who current player turn",
+ it("should return player turn",
     function() {
      let board = ['O', '', 'X', '', '', 'O', '', '', 'X']
      expect(engine.determineTurn(board)).toEqual('X');

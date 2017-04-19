@@ -1,6 +1,6 @@
 {
   "name": "tic-tac-toe-ai-engine",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Agnostic Tic Tac Toe game engine. Should be able to plug into any javascript program and provide a simple Tic Tac Toe AI API.",
   "main": "index.js",
   "scripts": {
