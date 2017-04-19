@@ -1,5 +1,5 @@
 describe("Tic Tac Toe Engine AI", function() {
-  var engine = require('../TicTacToeEngineAI');
+  var engine = require('../index');
 
  // determineTurn
  it("should return player turn",
