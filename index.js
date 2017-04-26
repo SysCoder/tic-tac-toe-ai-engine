@@ -63,16 +63,15 @@ function numericValue(evaluatedState) {
 
 function computePossibleMoves(gameState) {
   let player = determineTurn(gameState);
+  let indexValues = Array.from(Array(gameState.length).keys());
+  let emptyLocations = indexValues.filter(x => gameState[x] === '');
+  return emptyLocations.map(x => copyAssignReturn(gameState, x, player));
+}
 
-  let possibleStates = [];
-  for(let i = 0;i < gameState.length;i++) {
-    if (gameState[i] === '') {
-      let possibleState = gameState.slice();
-      possibleState[i] = player;
-      possibleStates.push(possibleState);
-    }
-  }
-  return possibleStates;
+function copyAssignReturn(inputArray, location, value) {
+  let returnArray = inputArray.slice();
+  returnArray[location] = value;
+  return returnArray;
 }
 
 function determineTurn(gameState) {
