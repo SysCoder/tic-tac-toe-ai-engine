@@ -1,4 +1,4 @@
-
+"use strict";
 // Insert a valid game state and get an evaluation of the game state.
 //
 // Input: ['X', 'O', '', '', '', '', '', '', '']
