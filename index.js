@@ -1,4 +1,6 @@
 "use strict";
+const cache = {};
+
 // Insert a valid game state and get an evaluation of the game state.
 //
 // Input: ['X', 'O', '', '', '', '', '', '', '']
@@ -21,6 +23,9 @@
 // on both sides.
 // NextBestGameState: Gives the next best move for current player.
 function computeMove(gameState) {
+  if (cache[gameState.toString()]) {
+    return cache[gameState.toString()];
+  }
   let whoWon = determineWinner(gameState);
   if (whoWon === 'X') {
     return {winner: whoWon, depth: 0, nextBestGameState: gameState};
@@ -28,10 +33,14 @@ function computeMove(gameState) {
     return {winner: whoWon, depth: 0, nextBestGameState: gameState};
   } else {
     let possibleMoves = computePossibleMoves(gameState);
+    let bestMove;
     if (possibleMoves.length == 0) {
-      return {winner: '', depth: 0, nextBestGameState: gameState};
+      bestMove = {winner: '', depth: 0, nextBestGameState: gameState};
+    } else {
+      bestMove = possibleMoves.map(evaluateGameState).reduce(getBestMove);
     }
-    return possibleMoves.map(evaluateGameState).reduce(getBestMove)
+    cache[gameState.toString()] = bestMove;
+    return bestMove;
   }
 }
 
@@ -39,7 +48,7 @@ function evaluateGameState(gameState) {
   let evaluatedPosition = computeMove(gameState);
   return {
     winner: evaluatedPosition.winner,
-    depth: evaluatedPosition.depth += 1,
+    depth: evaluatedPosition.depth + 1,
     nextBestGameState: gameState,
   };
 }
